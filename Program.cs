@@ -7,7 +7,8 @@ namespace Lab_9_Refactoring_Time
     {
         static void Main(string[] args)
         {
-            List<string> names = new List<string> { "Clayton", "Heather", "Reggie" };
+            //best practice is to use var (unless teacher says not to)
+            var names = new List<string> { "Clayton", "Heather", "Reggie" };
             List<string> foods = new List<string> { "Potato Curry", "Donuts", "Pizza" };
             List<string> towns = new List<string> { "Flat Rock", "Marysville", "Detroit" };
             List<string> movies = new List<string> { "Pulp Fiction", "Air Bud", "Star Wars" };
@@ -17,23 +18,23 @@ namespace Lab_9_Refactoring_Time
             string otherInfo = "Would you like to see other information? (y/n)";
 
             bool resume = false;
-            
-                do
-                {
+
+            do
+            {
                 try
                 {
                     string userInput = GetUserInput("Would you like to 1) see a student or 2) add a new student? (Type 'see' or 'add').").ToLower();
                     if (userInput == "see")
                     {
-                        for (int i = 0; i < names.Count; i++)
+                        for (int i = 1; i < names.Count; i++)
                         {
-                            Console.WriteLine($"{i}. {names[i]}");
+                            Console.WriteLine($"{i}. {names[i - 1]}");
                         }
                         bool resume2 = false;
                         do
                         {
-                            int userChoice1 = int.Parse(GetUserInput("Woud student would you like to see? Enter a number."));
-                            for (int i = 0; i < names.Count; i++)
+                            int userChoice1 = int.Parse(GetUserInput("Which student would you like to see? Enter a number."));
+                            for (int i = 1; i < names.Count; i++)
                             {
                                 if (userChoice1 == i)
                                 {
@@ -42,25 +43,25 @@ namespace Lab_9_Refactoring_Time
                                         string userChoice2 = GetUserInput("What would you like to see? Food, hometown, or movie? (or you can type 'all' for all).");
                                         if (userChoice2 == "food")
                                         {
-                                            Console.WriteLine(GetStudentFood(names, foods, i));
+                                            Console.WriteLine(GetStudentFood(names, foods, i - 1));
 
                                         }
                                         else if (userChoice2 == "hometown")
                                         {
-                                            Console.WriteLine(GetStudentHomeTown(names, towns, i));
+                                            Console.WriteLine(GetStudentHomeTown(names, towns, i - 1));
                                             resume2 = AskToTryAgain(GetUserInput(otherInfo));
 
 
                                         }
                                         else if (userChoice2 == "movie")
                                         {
-                                            Console.WriteLine(GetStudentMovie(names, movies, i));
+                                            Console.WriteLine(GetStudentMovie(names, movies, i - 1));
                                             resume2 = AskToTryAgain(GetUserInput(otherInfo));
 
                                         }
                                         else if (userChoice2 == "all")
                                         {
-                                            Console.WriteLine(GetAllStudentInfo(names, foods, towns, movies, i));
+                                            Console.WriteLine(GetAllStudentInfo(names, foods, towns, movies, i - 1));
                                             resume2 = AskToTryAgain(GetUserInput(otherInfo));
 
                                         }
@@ -95,16 +96,21 @@ namespace Lab_9_Refactoring_Time
 
                     resume = AskToTryAgain(GetUserInput(mainMenu));
                 }
-                catch(FormatException)
+                catch (FormatException fe)
                 {
+                    //always a good idea to notify the user that something went wrong and then let them decide to continue
+                    //you should only 'swallow' an exception on very rare occasions
+                    //Console.WriteLine($"An problem was detected with the input given {fe.Message}");
                     resume = AskToTryAgain(GetUserInput(mainMenu));
                 }
                 catch (StackOverflowException)
                 {
+                    //This a serious error that means you have a bug in your program.  This will never happen during normal
+                    //operation so you shouldn't continue
                     resume = AskToTryAgain(GetUserInput(mainMenu));
                 }
-                } while (resume);
-            
+            } while (resume);
+
 
         }
         static string GetAllStudentInfo(List<string> names, List<string> foods, List<string> towns, List<string> movies, int index)
@@ -154,7 +160,7 @@ namespace Lab_9_Refactoring_Time
                 string userError = GetUserInput("That's not right. Try again: 'y' or 'n'");
                 AskToTryAgain(userError);
             }
-            
+
             return true;
 
         }
@@ -162,14 +168,8 @@ namespace Lab_9_Refactoring_Time
         static string GetUserInput(string message)
         {
             Console.WriteLine(message);
-            return Console.ReadLine();
-            
+            return Console.ReadLine().ToLower();
+
         }
-
-
-
-
-
-
     }
 }
