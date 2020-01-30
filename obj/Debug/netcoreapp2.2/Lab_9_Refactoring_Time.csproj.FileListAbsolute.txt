@@ -9,3 +9,13 @@ C:\Users\New Owner\Documents\PROGRAMMING\C#\Grand Circus\Labs\Lab_9_Refactoring_
 C:\Users\New Owner\Documents\PROGRAMMING\C#\Grand Circus\Labs\Lab_9_Refactoring_Time\obj\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.AssemblyInfo.cs
 C:\Users\New Owner\Documents\PROGRAMMING\C#\Grand Circus\Labs\Lab_9_Refactoring_Time\obj\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.dll
 C:\Users\New Owner\Documents\PROGRAMMING\C#\Grand Circus\Labs\Lab_9_Refactoring_Time\obj\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.pdb
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\bin\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.deps.json
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\bin\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.runtimeconfig.json
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\bin\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.runtimeconfig.dev.json
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\bin\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.dll
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\bin\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.pdb
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\obj\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.csprojAssemblyReference.cache
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\obj\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.AssemblyInfoInputs.cache
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\obj\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.AssemblyInfo.cs
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\obj\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.dll
+C:\Projects\Clay GC\RefactoringTime\Grand-Circus-Lab-9-Refactoring-Time\obj\Debug\netcoreapp2.2\Lab_9_Refactoring_Time.pdb
